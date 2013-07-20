@@ -1,0 +1,6 @@
+- if Docker.version.is_a? Hash
+  Docker is up version #{Docker.version["Version"]}
+- else
+  Docker is down
+= render 'images/index'
+= render 'containers/index'

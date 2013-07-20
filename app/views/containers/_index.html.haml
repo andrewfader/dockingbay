@@ -1,0 +1,38 @@
+%table
+  %thead
+    %tr
+      %th
+        ID
+      %th
+        Image
+      %th
+        Command
+      %th
+        Created
+      %th
+        Status
+      %th
+        Ports
+      %th
+        SizeRw
+      %th
+        SizeRootFs
+  %tbody
+    - @containers.each do |c|
+      %tr
+        %td
+          =link_to c.id, container_path(c.id)
+        %td
+          =c.image
+        %td
+          =c.command
+        %td
+          =Time.at(c.created).to_datetime.strftime("%m/%d/%Y")
+        %td
+          =c.status
+        %td
+          =c.ports
+        %td
+          =c.sizerw
+        %td
+          =c.sizerootfs

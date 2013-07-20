@@ -1,0 +1,24 @@
+%table
+  %thead
+    %tr
+      %th Repository
+      %th Tag
+      %th ID
+      %th Created
+      %th Size
+      %th Virtual Size
+  %tbody
+    - @images.each do |i|
+      %tr
+        %td
+          = i.try(:repository)
+        %td
+          = i.try(:tag)
+        %td
+          = i.id
+        %td
+          =Time.at(i.created).to_datetime.strftime("%m/%d/%Y")
+        %td
+          = i.size
+        %td
+          = i.virtualsize
