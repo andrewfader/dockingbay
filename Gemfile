@@ -9,6 +9,7 @@ gem "resque", github: "resque/resque"
 gem 'haml'
 gem 'jbuilder', '~> 1.2'
 gem 'jquery-rails'
+gem 'jquery-datatables-rails'
 gem 'rails', '4.0.0'
 gem 'sass-rails', '~> 4.0.0'
 gem 'simple_form', '~> 3.0.0.rc', github: 'plataformatec/simple_form'
