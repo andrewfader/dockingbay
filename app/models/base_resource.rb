@@ -8,7 +8,7 @@ class BaseResource < ActiveResource::Base
 
   def self.collection_path(prefix_options = {}, query_options = nil)
     prefix_options, query_options = split_options(prefix_options) if query_options.nil?
-    "#{prefix(prefix_options)}#{collection_name}/json#{query_string(query_options)}"
+    "#{prefix(prefix_options)}#{collection_name}/json#{query_string(query_options)}?all=1"
   end
 
   def self.recent

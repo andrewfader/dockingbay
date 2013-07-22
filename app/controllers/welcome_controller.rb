@@ -1,6 +1,6 @@
 class WelcomeController < ApplicationController
   def index
-    @images = Image.recent
-    @containers = Container.recent
+    @images = Image.all
+    @containers = Container.all
   end
 end
