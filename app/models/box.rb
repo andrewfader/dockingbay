@@ -1,6 +1,8 @@
 class Box < ActiveRecord::Base
   include ActionView::Helpers::DateHelper
   belongs_to :user
+  validates_presence_of :name
+  validates_presence_of :container_id
 
   def container
     Container.find(container_id)

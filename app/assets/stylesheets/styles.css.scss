@@ -1,9 +1,12 @@
 body {
-  /* background-color: #fff; */
-  color: #333;
+  background-color: #fff;
+  background-image: url('bg.jpg');
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
+}
+.content {
+  padding: 5px
 }
 
 p, ol, ul, td {
@@ -18,17 +21,6 @@ pre {
   font-size: 11px;
 }
 
-a {
-  color: #000;
-  &:visited {
-    color: #666;
-  }
-  &:hover {
-    color: #fff;
-    background-color: #000;
-  }
-}
-
 div {
   &.field, &.actions {
     margin-bottom: 10px;
@@ -39,11 +31,6 @@ div {
   color: green;
 }
 
-#display {
-  width: 720px;
-  height: 440px;
-  display: block;
-}
 .field_with_errors {
   padding: 2px;
   background-color: red;

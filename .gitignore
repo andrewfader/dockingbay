@@ -20,4 +20,5 @@ pickle-email-*.html
 public/uploads
 tags
 config/ldap.yml
+.DS_Store
 foobar

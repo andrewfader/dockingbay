@@ -11,4 +11,8 @@
  *= require_self
  *= require_tree .
  *= require dataTables/jquery.dataTables
+ *= require jquery-ui
+ *= require font-awesome
+ *= require bootstrap
+ *= require prettify
  */
