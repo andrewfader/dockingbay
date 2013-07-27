@@ -7,6 +7,7 @@
       %th Created
       %th Status
       %th Ports
+      %th Logs
   %tbody
     - @boxes.each do |b|
       %tr
@@ -16,3 +17,4 @@
         %td=b.created_at
         %td=b.status
         %td=b.ports
+        %td=link_to b.container.data.data.present? ? b.container.data.data.length : "Click to generate then come back later", container_path(b.container.id)

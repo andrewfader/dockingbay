@@ -10,7 +10,7 @@ class ContainerData < ActiveRecord::Base
       self.save!
     end
 
-    @output ||= Excon.post("#{BaseResource::API_URL}containers/#{container_id}/attach?logs=1&stream=1&stdout=1", response_block: streamer)
+    @output ||= Excon.post("#{BaseResource::API_URL}containers/#{container_id}/attach?logs=1&stream=0&stdout=1", response_block: streamer)
 
   end
 end
