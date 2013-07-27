@@ -1,4 +1,5 @@
 class BoxesController < InheritedResources::Base
+  before_filter :authenticate_user!
   actions :create, :index
   def create
     box_params = permitted_params[:box]

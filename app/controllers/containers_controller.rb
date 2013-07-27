@@ -1,4 +1,5 @@
 class ContainersController < InheritedResources::Base
+  before_filter :authenticate_user!
   actions :index, :show
   def show
     @container = Container.find(params[:id])
