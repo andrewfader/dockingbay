@@ -1,15 +1,18 @@
 - if current_user
   - if Docker.version.is_a? Hash
     Docker is up version #{Docker.version["Version"]} at #{BaseResource::DOCKER_URL}
+    %h3=link_to "Show all containers", "/containers"
+    %h3=link_to "Show all images", "/images"
+    %h3=link_to "Show all boxes", "/boxes"
+    %h2 Your Boxes
+    = render partial: "boxes/index", locals: { user: true }
+    %h2 Provision Box
+    = simple_form_for Box.new do |f|
+      = f.input :name
+      = f.input :user_id, as: :hidden, input_html: { value: current_user.id }
+      = f.submit
   - else
     Docker is down
-  %h3 Your Boxes
-  = render "boxes/index"
-  %h3 Provision Box
-  = simple_form_for Box.new do |f|
-    = f.input :name
-    = f.input :user_id, as: :hidden, input_html: { value: current_user.id }
-    = f.submit
 - else
   =link_to "Log in", new_user_session_path
 

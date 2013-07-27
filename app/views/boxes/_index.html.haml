@@ -2,15 +2,17 @@
   %thead
     %tr
       %th Name
-      %th User Name
+      - unless user
+        %th User Name
       %th Created
-      %th Container
+      %th Status
       %th Ports
   %tbody
     - @boxes.each do |b|
       %tr
         %td=b.name
-        %td=b.user.try(:login)
+        - unless user
+          %td=b.user.try(:login)
         %td=b.created_at
-        %td=b.container_id
+        %td=b.status
         %td=b.ports
