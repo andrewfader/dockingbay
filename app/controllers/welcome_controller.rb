@@ -1,6 +1,5 @@
 class WelcomeController < ApplicationController
   def index
-    @images = Image.all
-    @containers = Container.all
+    @boxes = Box.where(user_id: current_user.id) if current_user
   end
 end

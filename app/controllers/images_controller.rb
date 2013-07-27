@@ -1,5 +1,3 @@
-class ImagesController < ApplicationController
-  def index
-    @images = Image.all
-  end
+class ImagesController < InheritedResources::Base
+  actions :index
 end

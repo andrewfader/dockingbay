@@ -1,2 +1,2 @@
-Docker.url = 'http://192.168.0.233'
+Docker.url = "http://" + BaseResource::DOCKER_URL
 Docker.options = { port: 4243 }

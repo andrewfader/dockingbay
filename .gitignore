@@ -19,3 +19,5 @@ pickle-email-*.html
 *.log
 public/uploads
 tags
+config/ldap.yml
+foobar

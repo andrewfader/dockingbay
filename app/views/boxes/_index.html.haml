@@ -1,0 +1,16 @@
+%table
+  %thead
+    %tr
+      %th Name
+      %th User Name
+      %th Created
+      %th Container
+      %th Ports
+  %tbody
+    - @boxes.each do |b|
+      %tr
+        %td=b.name
+        %td=b.user.try(:login)
+        %td=b.created_at
+        %td=b.container_id
+        %td=JSON.pretty_generate(b.container.networksettings.PortMapping.Tcp.attributes).to_s.gsub(/[\"\{\}]/,"").gsub(":"," <- ").gsub(",",", ")
