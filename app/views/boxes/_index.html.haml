@@ -13,4 +13,4 @@
         %td=b.user.try(:login)
         %td=b.created_at
         %td=b.container_id
-        %td=JSON.pretty_generate(b.container.networksettings.PortMapping.Tcp.attributes).to_s.gsub(/[\"\{\}]/,"").gsub(":"," <- ").gsub(",",", ")
+        %td=b.ports

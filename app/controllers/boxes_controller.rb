@@ -5,8 +5,8 @@ class BoxesController < InheritedResources::Base
     response = Excon.post("#{BaseResource::API_URL}containers/create",
                           body: %Q{{
                           "Hostname": "#{box_params[:name]}",
-                          "Image": "base",
-                          "Cmd":["/bin/bash"],
+                          "Image": "dhrp/sshd",
+                          "Cmd":["/usr/sbin/sshd","-D"],
                           "Tty": true,
                           "AttachStdin": true,
                           "OpenStdin": true,
