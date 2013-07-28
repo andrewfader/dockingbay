@@ -8,11 +8,11 @@
   %body
     - if notice
       %p.notice
-        = image_tag 'fox.gif', width: 16, height: 16
+        = image_tag 'fox.gif', width: 32, height: 32
         = notice
     - if alert
       %p.alert
-        = image_tag 'fox.gif'
+        = image_tag 'fox.gif', width: 32, height: 32
         = alert
     .content
       = yield

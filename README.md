@@ -1,4 +1,8 @@
-DockingBay, a.k.a. FaderStack, is a Rails front-end for managing a process infrastructure using lightweight linux containers or modular VMs (Docker/future Vagrant). 
+![Screenshot](screenshot.png "screenshoT")
+Docking Bay
+===========
+
+Docking Bay, a.k.a. FaderStack, is a Rails front-end for managing a process infrastructure using lightweight linux containers or modular VMs (Docker/future Vagrant). 
 
 Because I am building against the idea of OpenStack, currently uses ldap via devise ldap_authenticatable. You will need an ldap.yml in config/ and I have not provided an example. Sorry, but I am sure if you really want to run this you can figure out where to get the ldap.yml.example. Note to self, make a sane ldap.yml.example for a docker LDAP server that then in turn configures itself according to the ...?
 

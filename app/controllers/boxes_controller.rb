@@ -16,7 +16,11 @@ class BoxesController < InheritedResources::Base
     container_id = JSON.parse(response.body)["Id"]
     Excon.post("#{BaseResource::API_URL}containers/#{container_id}/start")
     box_params.merge!(container_id: container_id)
-    Box.create!(box_params)
+    if Box.create!(box_params)
+      flash[:notice] = "#{Box.last.name} is in the docking bay."
+    else
+      flash[:alert] = "Error provisioning new box."
+    end
     redirect_to '/'
   end
 

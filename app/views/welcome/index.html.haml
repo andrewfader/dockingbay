@@ -1,9 +1,10 @@
 - if current_user
   - if Docker.version.is_a? Hash
     %h4 Docker is up version #{Docker.version["Version"]} at #{BaseResource::DOCKER_URL}
-    %h3=link_to "Show all containers", "/containers"
-    %h3=link_to "Show all images", "/images"
-    %h3=link_to "Show all boxes", "/boxes"
+    %ul
+      %li=link_to "Show all containers", "/containers"
+      %li=link_to "Show all images", "/images"
+      %li=link_to "Show all boxes", "/boxes"
     %h2 Your Boxes
     = render partial: "boxes/index", locals: { user: true }
     %h2 Provision Box
