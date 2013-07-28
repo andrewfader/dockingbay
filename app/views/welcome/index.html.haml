@@ -1,6 +1,6 @@
 - if current_user
   - if Docker.version.is_a? Hash
-    Docker is up version #{Docker.version["Version"]} at #{BaseResource::DOCKER_URL}
+    %h4 Docker is up version #{Docker.version["Version"]} at #{BaseResource::DOCKER_URL}
     %h3=link_to "Show all containers", "/containers"
     %h3=link_to "Show all images", "/images"
     %h3=link_to "Show all boxes", "/boxes"
@@ -15,4 +15,3 @@
     Docker is down
 - else
   =link_to "Log in", new_user_session_path
-
