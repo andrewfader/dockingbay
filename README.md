@@ -1,4 +1,4 @@
-![Screenshot](screenshot.png "screenshoT")
+![Screenshot](screenshot.png "screenshot")
 Docking Bay
 ===========
 
@@ -9,3 +9,5 @@ Because I am building against the idea of OpenStack, currently uses ldap via dev
 You will need to install docker and run it according to BaseResource::DOCKER_URL and the port in config/initializers/docker.rb. Maybe I will move this config somewhere else later.
 
 Currently I am sometimes hitting docker through the docker-api gem which makes an object called Docker, along with Docker::Container etc that implement API methods. Container and Image are implemented as ActiveResource objects which follow the REST conventions. I have also used Excon to make API connections directly, which seems like the way I will end up implementing streaming. Currently I have consigned streaming to ContainerData and a Resque job, start with redis-server && resque work, I need to re-implement the streaming block logic using, I guess EventMachine? Actually - https://github.com/ngauthier/tubesock
+
+![Logo](app/assets/images/starfox_logo.png "logo")
