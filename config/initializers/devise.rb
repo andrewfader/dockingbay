@@ -4,6 +4,7 @@ Devise.setup do |config|
   # ==> LDAP Configuration
   config.ldap_logger = true
   config.ldap_create_user = true
+  config.sign_out_via = :get
   # config.ldap_update_password = true
   # config.ldap_config = "#{Rails.root}/config/ldap.yml"
   # config.ldap_check_group_membership = false
@@ -224,7 +225,6 @@ Devise.setup do |config|
   # config.navigational_formats = ["*/*", :html]
 
   # The default HTTP method used to sign out a resource. Default is :delete.
-  config.sign_out_via = :delete
 
   # ==> OmniAuth
   # Add a new OmniAuth provider. Check the wiki for more information on setting
