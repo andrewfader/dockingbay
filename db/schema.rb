@@ -22,7 +22,6 @@ ActiveRecord::Schema.define(version: 20130727231930) do
     t.string   "container_id"
     t.integer  "user_id"
     t.string   "name"
-    t.string   "ports"
   end
 
   add_index "boxes", ["user_id"], name: "index_boxes_on_user_id", using: :btree
