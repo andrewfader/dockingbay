@@ -4,6 +4,8 @@ class ContainerData < ActiveRecord::Base
 
   def get_data
     @output = nil
+    self.data = nil
+    self.save!
     streamer = proc do |chunk, remaining_bytes, total_bytes|
       @output = (@output || "") + ansi_escaped(chunk)
       self.data = (self.data || "") + ansi_escaped(chunk)
