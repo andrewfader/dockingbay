@@ -6,8 +6,8 @@ class BoxesController < InheritedResources::Base
     response = Excon.post("#{BaseResource::API_URL}containers/create",
                           body: %Q{{
                           "Hostname": "#{box_params[:name]}",
-                          "Image": "dhrp/sshd",
-                          "Cmd":["/usr/sbin/sshd","-D"],
+                          "Image": "#{box_params[:image]}",
+                          "Cmd":["#{box_params[:command]}"],
                           "Tty": true,
                           "AttachStdin": true,
                           "OpenStdin": true,
@@ -25,6 +25,6 @@ class BoxesController < InheritedResources::Base
   end
 
   def permitted_params
-    params.permit(box: [:user_id, :name])
+    params.permit(box: [:user_id, :name, :ref, :image, :command])
   end
 end

@@ -1,5 +1,5 @@
 class BaseResource < ActiveResource::Base
-  DOCKER_URL='192.168.0.98'
+  DOCKER_URL=Settings.docker_url
   API_URL="http://#{DOCKER_URL}:4243/v1.3/"
   self.site = API_URL
 

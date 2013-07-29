@@ -11,10 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130727231930) do
-
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+ActiveRecord::Schema.define(version: 20130729215753) do
 
   create_table "boxes", force: true do |t|
     t.datetime "created_at"
@@ -22,9 +19,13 @@ ActiveRecord::Schema.define(version: 20130727231930) do
     t.string   "container_id"
     t.integer  "user_id"
     t.string   "name"
+    t.string   "ref"
+    t.string   "image"
+    t.string   "ports"
+    t.string   "command"
   end
 
-  add_index "boxes", ["user_id"], name: "index_boxes_on_user_id", using: :btree
+  add_index "boxes", ["user_id"], name: "index_boxes_on_user_id"
 
   create_table "container_data", force: true do |t|
     t.text     "data"
@@ -34,10 +35,11 @@ ActiveRecord::Schema.define(version: 20130727231930) do
     t.datetime "updated_at"
   end
 
-  add_index "container_data", ["container_id"], name: "index_container_data_on_container_id", using: :btree
+  add_index "container_data", ["container_id"], name: "index_container_data_on_container_id"
 
   create_table "users", force: true do |t|
     t.string   "login",                  default: "", null: false
+    t.string   "email"
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -51,7 +53,7 @@ ActiveRecord::Schema.define(version: 20130727231930) do
     t.datetime "updated_at"
   end
 
-  add_index "users", ["login"], name: "index_users_on_login", unique: true, using: :btree
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  add_index "users", ["login"], name: "index_users_on_login", unique: true
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
 end

@@ -22,3 +22,7 @@ tags
 config/ldap.yml
 .DS_Store
 foobar
+
+config/settings.local.yml
+config/settings/*.local.yml
+config/environments/*.local.yml

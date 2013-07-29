@@ -1,0 +1,7 @@
+= simple_form_for Box.new do |f|
+  = f.input :name
+  = f.input :image, as: :select, collection: Settings.images, include_blank: false
+  = f.input :command, as: :select, collection: Settings.commands, include_blank: false
+  = f.input :ref, input_html: { value: "master" }
+  = f.input :user_id, as: :hidden, input_html: { value: current_user.id }
+  = f.submit

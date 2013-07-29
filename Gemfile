@@ -1,5 +1,4 @@
 source 'https://rubygems.org'
-gem "resque", github: "resque/resque"
 gem 'activeresource', require: 'active_resource', github: 'rails/activeresource'
 gem 'ansible', github: 'tddium/ansible'
 gem 'better_errors'
@@ -15,6 +14,8 @@ gem 'jquery-rails'
 gem 'pg'
 gem 'puma'
 gem 'rails', '4.0.0'
+gem 'rails_config'
+gem 'resque', github: "resque/resque"
 gem 'sass-rails', '~> 4.0.0'
 gem 'simple_form', '~> 3.0.0.rc', github: 'plataformatec/simple_form'
 gem 'therubyracer'

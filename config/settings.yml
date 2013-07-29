@@ -1,0 +1,4 @@
+docker_url: 127.0.0.1
+docker_port: 4243
+images: ["base", "dhrp/sshd"]
+commands: ["pwd","/usr/sbin/sshd -d"]

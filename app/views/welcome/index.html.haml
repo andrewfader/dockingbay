@@ -8,10 +8,7 @@
     %h2 Your Boxes
     = render partial: "boxes/index", locals: { user: true }
     %h2 Provision Box
-    = simple_form_for Box.new do |f|
-      = f.input :name
-      = f.input :user_id, as: :hidden, input_html: { value: current_user.id }
-      = f.submit
+    = render "boxes/new"
   - else
     Docker is down
 - else
