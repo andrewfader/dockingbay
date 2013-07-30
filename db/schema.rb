@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20130729215753) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "boxes", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -25,17 +28,17 @@ ActiveRecord::Schema.define(version: 20130729215753) do
     t.string   "command"
   end
 
-  add_index "boxes", ["user_id"], name: "index_boxes_on_user_id"
+  add_index "boxes", ["user_id"], name: "index_boxes_on_user_id", using: :btree
 
   create_table "container_data", force: true do |t|
     t.text     "data"
     t.binary   "blob"
-    t.text     "container_id"
+    t.string   "container_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "container_data", ["container_id"], name: "index_container_data_on_container_id"
+  add_index "container_data", ["container_id"], name: "index_container_data_on_container_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "login",                  default: "", null: false
@@ -53,7 +56,7 @@ ActiveRecord::Schema.define(version: 20130729215753) do
     t.datetime "updated_at"
   end
 
-  add_index "users", ["login"], name: "index_users_on_login", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["login"], name: "index_users_on_login", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
 end

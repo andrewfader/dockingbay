@@ -22,6 +22,7 @@ gem 'therubyracer'
 gem 'tubesock'
 gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
+gem 'rubydns'
 
 group :development, :test do
   gem 'sqlite3'

@@ -2,6 +2,9 @@
   %thead
     %tr
       %th Name
+      %th Image
+      %th Command
+      %th Ref
       - unless user
         %th User Name
       %th Created
@@ -12,6 +15,9 @@
     - @boxes.each do |b|
       %tr
         %td=b.name
+        %td=b.image
+        %td=b.command
+        %td=b.ref
         - unless user
           %td=b.user.try(:login)
         %td=b.created_at
