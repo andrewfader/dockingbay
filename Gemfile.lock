@@ -86,6 +86,7 @@ GEM
       execjs
     coffee-script-source (1.6.3)
     columnize (0.3.6)
+    concurrent-ruby (1.1.8)
     coolline (0.4.2)
     debug_inspector (0.0.2)
     debugger (1.6.1)
@@ -132,7 +133,8 @@ GEM
       haml (>= 4.0.0.rc.1)
       hpricot (~> 0.8.6)
       ruby_parser (~> 3.1.1)
-    i18n (0.6.4)
+    i18n (0.9.5)
+      concurrent-ruby (~> 1.0)
     jazz_hands (0.5.1)
       awesome_print (~> 1.1.0)
       coderay (~> 1.0.9)
