@@ -13,7 +13,7 @@ gem 'jquery-datatables-rails'
 gem 'jquery-rails'
 gem 'pg'
 gem 'puma'
-gem 'rails', '4.0.0'
+gem 'rails', '4.0.13'
 gem 'rails_config'
 gem 'resque', github: "resque/resque"
 gem 'sass-rails', '~> 4.0.0'
